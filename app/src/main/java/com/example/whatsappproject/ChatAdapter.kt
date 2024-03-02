@@ -14,9 +14,11 @@ class ChatAdapter (var chats : List<ChatsClass>) : RecyclerView.Adapter<ChatAdap
         return ChatViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ChatAdapter.ChatViewHolder, position: Int) {
-        holder.userName.text =chats[position].userName
-        holder.chatMsg.text =chats[position].chatMsg
+    override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
+        holder.apply {
+//           holder.userName.text(chats[position].userName)
+//            holder.chatMsg.text(chats[position].chatMsg)
+        }
     }
 
     override fun getItemCount(): Int {

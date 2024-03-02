@@ -17,16 +17,17 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     var fragment = arrayListOf<Fragment>()
-    val title = listOf("Chat","Status","Call")
-    var layout = arrayListOf(R.layout.fragment_chat,
-        R.layout.fragment_status,
-        R.layout.fragment_call)
+    val title = listOf("Chat", "Status", "Call")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        var layout = arrayListOf(
+            R.layout.fragment_chat,
+            R.layout.fragment_status,
+            R.layout.fragment_call
+        )
         fragment.add(ChatFragment())
         fragment.add(StatusFragment())
         fragment.add(CallFragment())
@@ -35,35 +36,34 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(binding.tlTabLayoutview, binding.Pagerview) { tab, position ->
             tab.text = title[position]
-        }.attach()
+        }
+            .attach()
     }
-     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.side_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+     menuInflater.inflate(R.menu.side_menu, menu)
+    return super.onCreateOptionsMenu(menu)
+     }
 
-   // override fun onCreateContextMenu(menu: Menu?): Boolean{
-     //   menuInflater.inflate(R.menu.status_menu,menu)
-      // return super.onCreateContextMenu(menu)
+    // override fun onCreateContextMenu(menu: Menu?): Boolean{
+    //   menuInflater.inflate(R.menu.status_menu,menu)
+    // return super.onCreateContextMenu(menu)
     //}
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.menuSettings-> Toast.makeText(this,"This is a settings", Toast.LENGTH_SHORT).show()
-            R.id.menuPayments-> Toast.makeText(this,"This is a payments", Toast.LENGTH_SHORT).show()
-            R.id.menuMessages-> Toast.makeText(this,"This is a starred msg", Toast.LENGTH_SHORT).show()
-            R.id.menuDevices-> Toast.makeText(this,"This is a linked devices", Toast.LENGTH_SHORT).show()
-            R.id.menuBroadcast-> Toast.makeText(this,"This is a new broadcast", Toast.LENGTH_SHORT).show()
-            R.id.menuGroup-> Toast.makeText(this,"This is a" +
-                    " new group", Toast.LENGTH_SHORT).show()
-        }
-        return super.onOptionsItemSelected(item)
+     when(item.itemId){
+       R.id.menuSettings-> Toast.makeText(this,"This is a settings", Toast.LENGTH_SHORT).show()
+       R.id.menuPayments-> Toast.makeText(this,"This is a payments", Toast.LENGTH_SHORT).show()
+     R.id.menuMessages-> Toast.makeText(this,"This is a starred msg", Toast.LENGTH_SHORT).show()
+    R.id.menuDevices-> Toast.makeText(this,"This is a linked devices", Toast.LENGTH_SHORT).show()
+    R.id.menuBroadcast-> Toast.makeText(this,"This is a new broadcast", Toast.LENGTH_SHORT).show()
+    R.id.menuGroup-> Toast.makeText(this,"This is a" +
+          " new group", Toast.LENGTH_SHORT).show()
     }
+      return super.onOptionsItemSelected(item)
+     }
 }
-class TabAdapter(fa: FragmentActivity, var list: List<Fragment>) : FragmentStateAdapter(fa) {
-    override fun getItemCount() = list.size
+    class TabAdapter(fa: FragmentActivity, var list: List<Fragment>) : FragmentStateAdapter(fa) {
+        override fun getItemCount() = list.size
+        override fun createFragment(position: Int) = list[position]
 
-    override
-    fun createFragment(position: Int) = list[position]
-
-}
+    }
