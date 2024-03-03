@@ -3,13 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".StatusFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_Recyclerview2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rv_Recyclerview2" />
+        android:layout_height="match_parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbwrite"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_gravity=""
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/Grey"
+            android:contentDescription="@string/message"
+            android:src="@drawable/edit_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.853" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbmessage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/Green"
+        android:contentDescription="@string/message"
+        android:src="@drawable/photo_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </FrameLayout>

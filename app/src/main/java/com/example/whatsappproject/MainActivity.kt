@@ -49,7 +49,18 @@ class MainActivity : AppCompatActivity() {
     // return super.onCreateContextMenu(menu)
     //}
 
-   
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+     when(item.itemId){
+       R.id.menuSettings-> Toast.makeText(this,"This is a settings", Toast.LENGTH_SHORT).show()
+       R.id.menuPayments-> Toast.makeText(this,"This is a payments", Toast.LENGTH_SHORT).show()
+     R.id.menuMessages-> Toast.makeText(this,"This is a starred msg", Toast.LENGTH_SHORT).show()
+    R.id.menuDevices-> Toast.makeText(this,"This is a linked devices", Toast.LENGTH_SHORT).show()
+    R.id.menuBroadcast-> Toast.makeText(this,"This is a new broadcast", Toast.LENGTH_SHORT).show()
+    R.id.menuGroup-> Toast.makeText(this,"This is a" +
+          " new group", Toast.LENGTH_SHORT).show()
+    }
+      return super.onOptionsItemSelected(item)
+     }
 }
     class TabAdapter(fa: FragmentActivity, var list: List<Fragment>) : FragmentStateAdapter(fa) {
         override fun getItemCount() = list.size

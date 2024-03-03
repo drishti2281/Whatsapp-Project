@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CallFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rv_Recyclerview3" />
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbmessage3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/Green"
+        android:contentDescription="@string/message"
+        android:src="@drawable/baseline_add_call_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </FrameLayout>
