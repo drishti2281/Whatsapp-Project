@@ -16,8 +16,6 @@ class ChatAdapter (var chats : List<ChatsClass>) : RecyclerView.Adapter<ChatAdap
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
         holder.apply {
-//           holder.userName.text(chats[position].userName)
-//            holder.chatMsg.text(chats[position].chatMsg)
         }
     }
 

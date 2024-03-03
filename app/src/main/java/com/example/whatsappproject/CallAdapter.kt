@@ -17,8 +17,7 @@ class CallAdapter (var calls : List<CallClass>) : RecyclerView.Adapter<CallAdapt
 
     override fun onBindViewHolder(holder: CallAdapter.CallViewHolder, position: Int) {
         holder.apply {
-           // holder.userName.text =calls[position].userName
-           // holder.callTime.text =calls[position].Time
+
         }
     }
 

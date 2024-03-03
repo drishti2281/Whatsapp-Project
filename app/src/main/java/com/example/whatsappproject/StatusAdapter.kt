@@ -17,8 +17,7 @@ class StatusAdapter (var status : List<StatusClass>) : RecyclerView.Adapter<Stat
 
     override fun onBindViewHolder(holder: StatusAdapter.StatusViewHolder, position: Int) {
         holder.apply {  }
- //       holder.userName.text =status[position].userName
-    //    holder.callTime.text =status[position].Time
+ 
     }
 
     override fun getItemCount(): Int {
