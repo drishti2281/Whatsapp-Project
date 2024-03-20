@@ -44,9 +44,9 @@ class MainActivity : AppCompatActivity() {
     return super.onCreateOptionsMenu(menu)
      }
 
-    // override fun onCreateContextMenu(menu: Menu?): Boolean{
-    //   menuInflater.inflate(R.menu.status_menu,menu)
-    // return super.onCreateContextMenu(menu)
+     //override fun onCreateContextMenu(menu: Menu?): Boolean{
+       //menuInflater.inflate(R.menu.status_menu,menu)
+     //return super.onCreateOptionsMenu(menu)
     //}
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
