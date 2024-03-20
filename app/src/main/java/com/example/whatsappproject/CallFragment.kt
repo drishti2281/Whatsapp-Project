@@ -46,10 +46,10 @@ class CallFragment : Fragment() {
         //Returns an empty new MutableList.
         val calls : MutableList<CallClass> = mutableListOf()
         //Returns a new MutableList with the given elements.
-        calls.add(CallClass("Ritika","01:00"))
-        calls.add(CallClass("Navpreet","02:30"))
-        calls.add(CallClass("Prabh","05:00"))
-        calls.add(CallClass("Anshika","06:30"))
+        calls.add(CallClass(R.drawable.img_1,"Ritika","1:00 am"))
+        calls.add(CallClass(R.drawable.img_3,"Navpreet","2:30 pm"))
+        calls.add(CallClass(R.drawable.img_4,"Prabh","5:00 pm"))
+        calls.add(CallClass(R.drawable.img_5,"Anshika","6:30 am"))
         binding.rvRecyclerview3.adapter = CallAdapter(calls)
         binding.rvRecyclerview3.layoutManager = LinearLayoutManager(requireContext())
     }

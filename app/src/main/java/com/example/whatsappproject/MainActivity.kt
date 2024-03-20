@@ -1,5 +1,6 @@
 package com.example.whatsappproject
 
+import android.app.ProgressDialog.show
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -44,11 +45,6 @@ class MainActivity : AppCompatActivity() {
     return super.onCreateOptionsMenu(menu)
      }
 
-     //override fun onCreateContextMenu(menu: Menu?): Boolean{
-       //menuInflater.inflate(R.menu.status_menu,menu)
-     //return super.onCreateOptionsMenu(menu)
-    //}
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
      when(item.itemId){
        R.id.menuSettings-> Toast.makeText(this,"This is a settings", Toast.LENGTH_SHORT).show()
@@ -56,8 +52,8 @@ class MainActivity : AppCompatActivity() {
      R.id.menuMessages-> Toast.makeText(this,"This is a starred msg", Toast.LENGTH_SHORT).show()
     R.id.menuDevices-> Toast.makeText(this,"This is a linked devices", Toast.LENGTH_SHORT).show()
     R.id.menuBroadcast-> Toast.makeText(this,"This is a new broadcast", Toast.LENGTH_SHORT).show()
-    R.id.menuGroup-> Toast.makeText(this,"This is a" +
-          " new group", Toast.LENGTH_SHORT).show()
+    R.id.menuGroup-> Toast.makeText(this,"This is a menu group",Toast.LENGTH_SHORT).show()
+
     }
       return super.onOptionsItemSelected(item)
      }

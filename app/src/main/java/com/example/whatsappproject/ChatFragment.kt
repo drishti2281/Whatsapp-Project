@@ -46,10 +46,10 @@ class ChatFragment : Fragment() {
         //Returns an empty new MutableList.
         val chats : MutableList<ChatsClass> = mutableListOf()
         //Returns a new MutableList with the given elements.
-        chats.add(ChatsClass("Ritika","Hello ji"))
-        chats.add(ChatsClass("Navpreet","Hi"))
-        chats.add(ChatsClass("Prabh","Happy"))
-        chats.add(ChatsClass("Anshika","Hnji"))
+        chats.add(ChatsClass(R.drawable.img_1,"Ritika","Hello ji","1:00 am"))
+        chats.add(ChatsClass(R.drawable.img_3,"Navpreet","Hi","8:57 pm"))
+        chats.add(ChatsClass(R.drawable.img_4,"Prabh","Happy","10:00 am"))
+        chats.add(ChatsClass(R.drawable.img_5,"Anshika","Hnji","6:30 pm"))
         binding.rvRecyclerview1.adapter = ChatAdapter(chats)
         binding.rvRecyclerview1.layoutManager = LinearLayoutManager(requireContext())
     }

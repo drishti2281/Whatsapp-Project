@@ -3,6 +3,7 @@ package com.example.whatsappproject
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,8 +16,10 @@ class ChatAdapter (var chats : List<ChatsClass>) : RecyclerView.Adapter<ChatAdap
     }
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
-        holder.apply {
-        }
+        holder.userName.setText(chats[position].userName)
+        holder.chatMsg.setText(chats[position].chatMsg)
+        holder.image.setImageResource(chats[position].image)
+        holder.time.setText(chats[position].Time)
     }
 
     override fun getItemCount(): Int {
@@ -24,7 +27,9 @@ class ChatAdapter (var chats : List<ChatsClass>) : RecyclerView.Adapter<ChatAdap
     }
 
     class ChatViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        val userName= view.findViewById<TextView>(R.id.tvuserName)
+        val userName= view.findViewById<TextView>(R.id.tvUserName)
         val chatMsg= view.findViewById<TextView>(R.id.tvchatMsg)
+        val image = view.findViewById<ImageView>(R.id.ivImageview)
+        val time =view.findViewById<TextView>(R.id.tvTime)
     }
 }

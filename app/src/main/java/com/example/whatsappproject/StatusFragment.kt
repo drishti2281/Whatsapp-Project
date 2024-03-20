@@ -46,10 +46,10 @@ class StatusFragment : Fragment() {
         //Returns an empty new MutableList.
         val Status : MutableList<StatusClass> = mutableListOf()
         //Returns a new MutableList with the given elements.
-        Status.add(StatusClass("Ritika","01:00 PM"))
-        Status.add(StatusClass("Navpreet","04:00 AM"))
-        Status.add(StatusClass("Prabh","05:30 AM"))
-        Status.add(StatusClass("Anshika","12:00 AM"))
+        Status.add(StatusClass(R.drawable.img_1,"Ritika","1:00 pm"))
+        Status.add(StatusClass(R.drawable.img_3,"Navpreet","4:00 am"))
+        Status.add(StatusClass(R.drawable.img_4,"Prabh","5:30 am"))
+        Status.add(StatusClass(R.drawable.img_5,"Anshika","12:00 pm"))
         binding.rvRecyclerview2.adapter = StatusAdapter(Status)
         binding.rvRecyclerview2.layoutManager = LinearLayoutManager(requireContext())
 
