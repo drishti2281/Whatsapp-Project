@@ -18,7 +18,7 @@ class StatusAdapter (var status : List<StatusClass>) : RecyclerView.Adapter<Stat
 
     override fun onBindViewHolder(holder: StatusAdapter.StatusViewHolder, position: Int) {
         holder.userName.setText(status[position].userName)
-        holder.callTime.setText(status[position].Time)
+       // holder.callTime.setText(status[position].Time)
         holder.image.setImageResource(status[position].image)
 
     }
@@ -29,7 +29,7 @@ class StatusAdapter (var status : List<StatusClass>) : RecyclerView.Adapter<Stat
 
     class StatusViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val userName= view.findViewById<TextView>(R.id.tvuserName)
-        val callTime = view.findViewById<TextView>(R.id.tvTime)
+       // val callTime = view.findViewById<TextView>(R.id.tvTime)
         val image =view.findViewById<ImageView>(R.id.ivImage)
     }
 }

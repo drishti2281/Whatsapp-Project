@@ -1,12 +1,16 @@
 package com.example.whatsappproject
 
+import android.net.wifi.p2p.WifiP2pManager.ChannelListener
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.whatsappproject.databinding.FragmentStatusBinding
+import kotlinx.coroutines.channels.Channel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,14 +50,24 @@ class StatusFragment : Fragment() {
         //Returns an empty new MutableList.
         val Status : MutableList<StatusClass> = mutableListOf()
         //Returns a new MutableList with the given elements.
-        Status.add(StatusClass(R.drawable.img_1,"Ritika","1:00 pm"))
-        Status.add(StatusClass(R.drawable.img_3,"Navpreet","4:00 am"))
-        Status.add(StatusClass(R.drawable.img_4,"Prabh","5:30 am"))
-        Status.add(StatusClass(R.drawable.img_5,"Anshika","12:00 pm"))
-        binding.rvRecyclerview2.adapter = StatusAdapter(Status)
-        binding.rvRecyclerview2.layoutManager = LinearLayoutManager(requireContext())
+        Status.add(StatusClass(R.drawable.img_1,"Ritika",))
+        Status.add(StatusClass(R.drawable.img_3,"Navpreet"))
+        Status.add(StatusClass(R.drawable.img_4,"Prabh"))
+        Status.add(StatusClass(R.drawable.img_5,"Anshika"))
+        binding.rvStatus.adapter = StatusAdapter(Status)
+        binding.rvStatus.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+
+        val channelList = null
+        binding.rvChannels.adapter = channelList?.let { ChannelsAdapter(it) }
+        binding.rvChannels.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
     }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.status_menu, menu)
+        return super.onCreateOptionsMenu(menu,inflater)
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

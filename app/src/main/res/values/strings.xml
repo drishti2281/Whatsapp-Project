@@ -13,4 +13,10 @@
     <string name="settings">Settings</string>
     <string name="status_privacy">Status Privacy</string>
     <string name="message">Message</string>
+    <string name="Person">Person\n</string>
+    <string name="status">Status</string>
+    <string name="channels">Channels</string>
+    <string name="find_channels">Find Channels</string>
+    <string name="time">Time</string>
+    <string name="chat">Chat</string>
 </resources>

@@ -51,7 +51,7 @@
                     android:layout_width="46dp"
                     android:layout_height="44dp"
                     android:padding="10dp"
-                    android:src="@drawable/dots"
+                    android:src="@drawable/dots_white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
