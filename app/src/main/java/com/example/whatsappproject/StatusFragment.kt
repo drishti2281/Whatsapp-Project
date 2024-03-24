@@ -28,6 +28,13 @@ class StatusFragment : Fragment() {
     private var param2: String? = null
     lateinit var binding : FragmentStatusBinding
 
+    var channellist : MutableList<ChannelsClass> = mutableListOf(
+        ChannelsClass(R.drawable.img_3,"Drishuu","Hello","2:00 AM"))
+    var findChannellist : MutableList<FindchannelsClass> = mutableListOf(
+        FindchannelsClass(R.drawable.img_6,"Finance"),
+        FindchannelsClass(R.drawable.img_7,"News"),
+        FindchannelsClass(R.drawable.img_8,"Total Gaming"))
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -57,10 +64,13 @@ class StatusFragment : Fragment() {
         binding.rvStatus.adapter = StatusAdapter(Status)
         binding.rvStatus.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
 
-        val channelList = null
-        binding.rvChannels.adapter = channelList?.let { ChannelsAdapter(it) }
+        binding.rvChannels.adapter =  ChannelsAdapter(channellist)
         binding.rvChannels.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        binding.rvFindChannels.adapter = FindchannelsAdapter(findChannellist)
+        binding.rvFindChannels.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
